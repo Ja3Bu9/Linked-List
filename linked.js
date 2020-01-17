@@ -1,4 +1,3 @@
-// Construct Single Node
 class Node {
   constructor(data, next = null) {
     this.data = data;
@@ -6,25 +5,21 @@ class Node {
   }
 }
 
-// Create/Get/Remove Nodes From Linked List
 class LinkedList {
   constructor() {
     this.head = null;
     this.size = 0;
   }
 
-  // Insert first node
   insertFirst(data) {
     this.head = new Node(data, this.head);
     this.size++;
   }
 
-  // Insert last node
   insertLast(data) {
     let node = new Node(data);
     let current;
 
-    // If empty, make head
     if (!this.head) {
       this.head = node;
     } else {
@@ -40,14 +35,11 @@ class LinkedList {
     this.size++;
   }
 
-  // Insert at index
   insertAt(data, index) {
-    //  If index is out of range
     if (index > 0 && index > this.size) {
       return;
     }
 
-    // If first index
     if (index === 0) {
       this.insertFirst(data);
       return;
@@ -56,14 +48,13 @@ class LinkedList {
     const node = new Node(data);
     let current, previous;
 
-    // Set current to first
     current = this.head;
     let count = 0;
 
     while (count < index) {
-      previous = current; // Node before index
+      previous = current; 
       count++;
-      current = current.next; // Node after index
+      current = current.next; 
     }
 
     node.next = current;
@@ -72,7 +63,6 @@ class LinkedList {
     this.size++;
   }
 
-  // Get at index
   getAt(index) {
     let current = this.head;
     let count = 0;
@@ -89,7 +79,6 @@ class LinkedList {
     return null;
   }
 
-  // Remove at index
   removeAt(index) {
     if (index > 0 && index > this.size) {
       return;
@@ -99,7 +88,6 @@ class LinkedList {
     let previous;
     let count = 0;
 
-    // Remove first
     if (index == 0) {
       this.head = current.next;
     } else {
@@ -115,13 +103,11 @@ class LinkedList {
     this.size--;
   }
 
-  // Clear list
   clearList() {
     this.head = null;
     this.size = 0;
   }
 
-  // Print list data
   printListData() {
     let current = this.head;
     var tab=[];
