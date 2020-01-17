@@ -100,7 +100,7 @@ class LinkedList {
     let count = 0;
 
     // Remove first
-    if (index === 0) {
+    if (index == 0) {
       this.head = current.next;
     } else {
       while (count < index) {
@@ -165,6 +165,8 @@ function removeindex() {
 
 function clearall() {
   list.clearList();
+  document.getElementById('resu').innerHTML = "";
+  document.getElementById('resu2').innerHTML = "";
 }
 
 function find() {
